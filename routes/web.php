@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\Component\PaymentSlipComponent;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -10,4 +11,9 @@ Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
-require __DIR__.'/settings.php';
+Route::middleware(['auth', 'verified'])->group(function () {
+
+    Route::get('/payment-slips', PaymentSlipComponent::class)->name('payment-slips');
+});
+
+require __DIR__ . '/settings.php';
