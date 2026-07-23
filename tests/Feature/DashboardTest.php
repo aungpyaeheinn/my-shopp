@@ -24,4 +24,13 @@ class DashboardTest extends TestCase
         $response = $this->get(route('dashboard'));
         $response->assertOk();
     }
+
+    public function test_authenticated_users_can_visit_the_profile_settings_page(): void
+    {
+        $user = User::factory()->create();
+        $this->actingAs($user);
+
+        $response = $this->get(route('profile.edit'));
+        $response->assertOk();
+    }
 }
