@@ -16,9 +16,9 @@
                 wire:navigate>
                 {{ __('Dashboard') }}
             </flux:navbar.item>
-            <flux:navbar.item icon="document" :href="route('payment-slips')" :current="request()->routeIs('payment-slips')"
-                wire:navigate>
-                {{ __('Payment Slips') }}
+            <flux:navbar.item icon="document" :href="route('payment-slips')"
+                :current="request()->routeIs('payment-slips')" wire:navigate>
+                {{ __('Order Requests') }}
             </flux:navbar.item>
         </flux:navbar>
 
@@ -60,7 +60,7 @@
 
                 <flux:sidebar.item icon="document" :href="route('payment-slips')"
                     :current="request()->routeIs('payment-slips')" wire:navigate>
-                    {{ __('Payment Slips') }}
+                    {{ __('Order Requests') }}
                 </flux:sidebar.item>
             </flux:sidebar.group>
         </flux:sidebar.nav>

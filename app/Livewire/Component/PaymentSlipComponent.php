@@ -266,6 +266,6 @@ class PaymentSlipComponent extends Component
                 ),
                 'users' => User::where('id', '!=', auth()->id())->get(),
             ]
-        )->layout('components.layouts.app', ['title' => __('Payment Slips')]);
+        )->layout('components.layouts.app', ['title' => __('Order Requests')]);
     }
 }

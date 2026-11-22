@@ -13,7 +13,7 @@ Route::view('dashboard', 'dashboard')
 
 Route::middleware(['auth', 'verified'])->group(function () {
 
-    Route::get('/payment-slips', PaymentSlipComponent::class)->name('payment-slips');
+    Route::get('/order-requests', PaymentSlipComponent::class)->name('payment-slips');
 });
 
 require __DIR__ . '/settings.php';
